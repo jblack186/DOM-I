@@ -41,13 +41,89 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 console.log(logo);
+
 let cta = document.getElementById("cta-img");
 cta.setAttribute('src', siteContent["cta"]["img-src"])
 console.log(cta);
 
 let middleImg = document.getElementById("middle-img");
-middleImg.setAttribute('src', siteContent["main-content"]["img-src"])
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 console.log(middleImg);
 
-let nav = document.querySelector('nav');
-console.log(nav);
+// let headers = document.querySelectorAll("h4");
+// const titles = Object.values(siteContent.nav);
+// headers.forEach((e, i) => {
+//   e.textContent = titles[i];
+// });
+
+
+const nav = document.querySelectorAll("a");
+const navTitles = Object.values(siteContent.nav);
+nav.forEach((elem, ind) => {
+  elem.textContent = navTitles[ind]
+})
+
+
+const ctaH1 = document.getElementsByTagName('h1')[0];
+ctaH1.innerText = (siteContent['cta']['h1'])
+console.log(ctaH1);
+
+const buttonText = document.querySelector("button");
+buttonText.innerText = (siteContent["cta"]["button"]);
+
+const header1 = document.querySelectorAll("h4");
+header1[0].innerText = (siteContent["main-content"][ "features-h4"]);
+const featureText = document.querySelectorAll("p");
+featureText[0].innerText = (siteContent["main-content"]["features-content"]);
+
+const header2 = document.querySelectorAll("h4");
+header2[1].innerText = (siteContent["main-content"][ "about-h4"]);
+const aboutText = document.querySelectorAll("p");
+aboutText[1].innerText = (siteContent["main-content"]["about-content"]);
+
+const header3 = document.querySelectorAll("h4");
+header3[2].innerText = (siteContent["main-content"][ "services-h4"]);
+const servicesText = document.querySelectorAll("p");
+servicesText[2].innerText = (siteContent["main-content"]["services-content"]);
+
+const header4 = document.querySelectorAll("h4");
+header4[3].innerText = (siteContent["main-content"][ "product-h4"]);
+const productText = document.querySelectorAll("p");
+productText[3].innerText = (siteContent["main-content"]["product-content"]);
+
+const header5 = document.querySelectorAll("h4");
+header5[4].innerText = (siteContent["main-content"][ "vision-h4"]);
+const visionText = document.querySelectorAll("p");
+visionText[4].innerText = (siteContent["main-content"]["vision-content"]);
+
+const header6 = document.querySelectorAll("h4");
+header6[5].innerText = (siteContent["contact"][ "contact-h4"]);
+
+const address = document.querySelectorAll("p");
+address[5].innerText = (siteContent["contact"]["address"]);
+
+const phone = document.querySelectorAll("p");
+phone[6].innerText = (siteContent["contact"]["phone"]);
+
+const email = document.querySelectorAll("p");
+email[7].innerText = (siteContent["contact"]["email"]);
+
+
+const footer = document.querySelector("footer");
+footer.textContent = (siteContent["footer"]["copyright"]);
+
+const navA = document.querySelectorAll("a");
+navA.forEach(function(elem) {
+  elem.style.color = 'green'
+})
+
+footer2 = document.querySelector("footer");
+let newItem = document.createElement('p');
+newItem.textContent = 'This site is crazy cool';
+footer2.appendChild(newItem);
+
+newNav = document.querySelector("nav");
+let newItem2 = document.createElement('a');
+newItem2.textContent = "Author";
+newNav.appendChild(newItem2);
+newItem2.style.color = 'green';
